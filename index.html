@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajime: MiyaGi & Andy Panda — Андеграунд Биография</title>
+    <!-- Подключение Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Использование шрифта Inter и кастомные стили -->
+    <style>
+        /* Стиль для имитации старой пленки и черно-белой уличной культуры */
+        
+        /* 1. БАЗОВЫЙ СТИЛЬ ТЕЛА И ФОН */
+        .underground-bg {
+            background-color: #1a1a1a;
+            /* Грубая текстура бетона или асфальта */
+            background-image: url("https://placehold.co/1000x1000/1a1a1a/2e2e2e?text=CONCRETE");
+            background-size: cover;
+            min-height: 100vh;
+            font-family: 'Courier New', Courier, monospace; /* Грубый, моноширинный шрифт */
+            color: #d1d5db; /* Светло-серый, а не чисто белый */
+            overflow-x: hidden;
+        }
+
+        /* 2. ШРИФТЫ И АКЦЕНТЫ */
+        .title-font {
+            /* Имитация граффити или трафарета */
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            letter-spacing: 0.1em;
+            text-shadow: 2px 2px 0 #000, 4px 4px 0 #333; /* Объемный, грубый эффект */
+            color: #ffffff;
+            line-height: 0.9;
+        }
+
+        /* Стиль для ключевых слов (имитация акриловой краски) */
+        .paint-highlight {
+            color: #ff0055; /* Ржавый/кровавый красный акцент */
+            font-weight: bold;
+        }
+
+        /* 3. КАРТОЧКИ ФАКТОВ */
+        .fact-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #333;
+            border-left: 5px solid #ff0055; /* Красная полоса как трафарет */
+            box-shadow: 5px 5px 0 #000;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .fact-card:hover {
+            transform: translate(-2px, -2px); /* Эффект "оторванной бумаги" */
+            box-shadow: 7px 7px 0 #000;
+        }
+
+        /* 4. КНОПКА "СПРЕЙ" */
+        /* Кнопка осталась, но используется только для стилизации - можно было бы ее удалить, но лучше сохранить класс, если он понадобится */
+        .spray-button {
+            position: relative;
+            background-color: #ff0055;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+            box-shadow: 3px 3px 0 #000;
+            transition: all 0.1s;
+        }
+        .spray-button:hover {
+            background-color: #cc0044;
+            box-shadow: 1px 1px 0 #000;
+            transform: translate(2px, 2px);
+        }
+
+        /* 5. АНИМАЦИИ (Flicker/Glitch) */
+        .flicker-anim {
+            animation: flicker-glitch 4s infinite alternate;
+        }
+        @keyframes flicker-glitch {
+            0%, 19.9% { filter: brightness(1); }
+            20% { filter: brightness(1.2); }
+            20.1% { filter: brightness(0.8); }
+            20.2% { filter: brightness(1.1); }
+            20.3% { filter: brightness(0.9); }
+            20.4% { filter: brightness(1); }
+            70% { filter: brightness(1); }
+            70.1% { filter: brightness(1.3); }
+            70.2% { filter: brightness(0.7); }
+            70.3% { filter: brightness(1); }
+            100% { filter: brightness(1); }
+        }
+
+        /* 6. СТИЛИ ГРАФФИТИ-ХОЛСТА */
+        #graffitiCanvas {
+            border: 3px solid #666; /* Грубая рамка */
+            /* Чистый темный фон для имитации стены (убраны все URL с надписями) */
+            background-color: #444; 
+            background-size: cover;
+            cursor: crosshair;
+            touch-action: none;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9); /* Имитация глубины */
+        }
+    </style>
+</head>
+
+<body class="underground-bg antialiased">
+
+    <!-- Секция заголовка и интро -->
+    <header class="text-center pt-16 pb-8 px-4 bg-black bg-opacity-90 border-b-4 border-gray-700">
+        <h1 class="text-6xl md:text-9xl font-black uppercase title-font mb-4 flicker-anim">
+            HAJIME
+        </h1>
+        <p class="text-xl md:text-3xl font-light tracking-wider text-gray-500">
+            [MIYAGI & ANDY PANDA]
+        </p>
+    </header>
+
+    <!-- Основной контент: Биография -->
+    <main class="container mx-auto p-4 md:p-8">
+        <section id="bio" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-white border-b-2 border-gray-700 pb-2 uppercase tracking-widest title-font">
+                Хроника улиц
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Факт 1: Земляки из Владикавказа -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">1. Корни: Владикавказ</h3>
+                    <p class="text-sm text-gray-400">
+                        <span class="paint-highlight">MiyaGi (Азамат Кудзаев)</span> (13.12.1990) получил мед. образование.
+                        <span class="paint-highlight">Andy Panda (Сослан Бурнацев)</span> (02.10.1995) — технолог.
+                        Оба выбрали улицу и студию вместо дипломов.
+                    </p>
+                </div>
+                <!-- Факт 2: Создание Дуэта -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">2. Точка Сборки: Dope Records</h3>
+                    <p class="text-sm text-gray-400">
+                        Начали сольно, но сошлись в объединении Dope Records. Официально дуэт MiyaGi & Эндшпиль образовался в <span class="paint-highlight">2015 году</span>. Первая работа — "Санавабич".
+                    </p>
+                </div>
+                <!-- Факт 3: Смена Псевдонима -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">3. Имена</h3>
+                    <p class="text-sm text-gray-400">
+                        MiyaGi — в честь <span class="paint-highlight">Мастера из "Малыш-каратист"</span>. В 2019 году Сослан сменил Эндшпиль на Andy Panda для сольных проектов.
+                    </p>
+                </div>
+                <!-- Факт 4: Рекордный Хит -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">4. Легенда: I Got Love</h3>
+                    <p class="text-sm text-gray-400">
+                        Клип на песню <span class="paint-highlight">"I Got Love"</span> (с Рем Дигга) набрал <span class="paint-highlight">более 350 млн</span> просмотров. Прорыв за пределы СНГ.
+                    </p>
+                </div>
+                <!-- Факт 5: Стиль и Влияния -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">5. Саунд: Сплав Жанров</h3>
+                    <p class="text-sm text-gray-400">
+                        Стиль — смесь <span class="paint-highlight">рэпа, рэгги и дэнсхолла</span>. Отказ от "читки" в сторону мелодичного, напевного исполнения. Вдохновение: Боб Марли и Notorious B.I.G.
+                    </p>
+                </div>
+                <!-- Факт 6: Основание Лейбла -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">6. Основание Hajime Records</h3>
+                    <p class="text-sm text-gray-400">
+                        Собственный лейбл <span class="paint-highlight">Hajime Records</span> основан в 2017 году. Японское "Hajime" (<span class="paint-highlight">はじめ</span>) означает "Начало".
+                    </p>
+                </div>
+                <!-- Факт 7: Серия Альбомов -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">7. Трилогия Hajime</h3>
+                    <p class="text-sm text-gray-400">
+                        Серия альбомов <span class="paint-highlight">"Hajime, Pt. 1, 2, 3"</span> (2016-2018). Эволюция от классического рэпа к более экспериментальному, поп-ориентированному звуку.
+                    </p>
+                </div>
+                <!-- Факт 8: Интровертность -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">8. Минимум Медиа</h3>
+                    <p class="text-sm text-gray-400">
+                        Артисты закрыты, почти <span class="paint-highlight">не дают интервью</span>. Предпочитают, чтобы за них говорила только музыка.
+                    </p>
+                </div>
+                <!-- Факт 9: Трагедия -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">9. Пауза</h3>
+                    <p class="text-sm text-gray-400">
+                        MiyaGi взял длительную паузу в 2017 году из-за страшной <span class="paint-highlight">семейной трагедии</span> (гибель сына).
+                    </p>
+                </div>
+                <!-- Факт 10: Отказ от Коммерции -->
+                <div class="fact-card p-6 rounded-sm">
+                    <h3 class="text-lg font-extrabold text-gray-300 mb-2">10. Непроданные Права</h3>
+                    <p class="text-sm text-gray-400">
+                        Hajime Records принципиально не продает права на треки для рекламы, ставя <span class="paint-highlight">художественную цельность</span> выше коммерции.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- тегни -->
+        <section id="minigame" class="my-16 p-6 md:p-10 fact-card">
+            <h2 class="text-3xl font-bold mb-6 text-white border-b-2 border-gray-700 pb-2 uppercase tracking-widest title-font">
+                Мини-игра: ТЭГ НА СТЕНЕ
+            </h2>
+            <!-- Обновленный, лаконичный текст -->
+            <p class="mb-4 text-gray-400 text-sm">
+                Оставь свой след. Выбирай цвет и пиши свой тег.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-4 justify-center items-center">
+                <!-- Кнопки выбора цвета -->
+                <span class="text-gray-500 text-xs uppercase">Краска:</span>
+                <button data-color="#ff0055" class="color-btn w-8 h-8 rounded-full border-2 border-gray-800 bg-red-600 shadow-inner hover:scale-110 transition"></button>
+                <button data-color="#ffffff" class="color-btn w-8 h-8 rounded-full border-2 border-gray-800 bg-white shadow-inner hover:scale-110 transition"></button>
+                <button data-color="#00ff00" class="color-btn w-8 h-8 rounded-full border-2 border-gray-800 bg-green-500 shadow-inner hover:scale-110 transition"></button>
+                <button data-color="#ffff00" class="color-btn w-8 h-8 rounded-full border-2 border-gray-800 bg-yellow-400 shadow-inner hover:scale-110 transition"></button>
+                <button id="clearCanvas" class="bg-gray-700 text-xs text-white font-bold py-2 px-3 rounded-sm shadow-md hover:bg-gray-600 transition">
+                    ОЧИСТИТЬ
+                </button>
+            </div>
+
+            <!-- Холст для граффити -->
+            <div class="flex justify-center">
+                <canvas id="graffitiCanvas" width="800" height="400" class="w-full max-w-4xl rounded-sm"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="text-center py-6 px-4 bg-black bg-opacity-90 border-t-4 border-gray-700 mt-12">
+        <p class="text-xs text-gray-500 tracking-widest">&copy; @hajime_1244 2025 все права защищены</p>
+    </footer>
+
+    <!-- JavaScript логика -->
+    <script type="module">
+        // ==========================================
+        // МАНДАТНЫЙ БЛОК: Инициализация Firebase/Auth
+        // ==========================================
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth;
+
+        try {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+            setLogLevel('Debug'); // Обязательное логирование
+
+            async function initializeAuth() {
+                try {
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    // console.log("Firebase Auth initialized successfully.");
+                } catch (error) {
+                    console.error("Firebase Auth failed:", error);
+                }
+            }
+            initializeAuth();
+        } catch(e) {
+            console.error("Firebase initialization failed:", e);
+        }
+
+        // ==========================================
+        // ЛОГИКА САЙТА: Анимация и Интерактив
+        // ==========================================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Анимация появления элементов (Simple Opacity Fade)
+            const elements = document.querySelectorAll('header, section, footer');
+            let delay = 0;
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.5s ease-out';
+                    el.style.opacity = 1;
+                }, delay);
+                delay += 150; 
+            });
+
+
+            // 2. Логика мини-игры "Граффити на стене"
+            const canvas = document.getElementById('graffitiCanvas');
+            const ctx = canvas.getContext('2d');
+            const colorButtons = document.querySelectorAll('.color-btn');
+            const clearButton = document.getElementById('clearCanvas');
+
+            let isDrawing = false;
+            // Изначальный цвет - ржавый красный
+            let currentColor = '#ff0055'; 
+            const spraySize = 12; // Размер
+            const sprayDensity = 30; // Плотность
+
+            // Устанавливаем текущий цвет
+            colorButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentColor = btn.getAttribute('data-color');
+                    colorButtons.forEach(b => b.style.boxShadow = 'inset 0 0 5px rgba(0,0,0,0.8)'); // Сброс
+                    btn.style.boxShadow = `0 0 5px ${currentColor}, inset 0 0 5px ${currentColor}`; // Подсветка
+                });
+            });
+
+            // Установка начального активного цвета
+            document.querySelector('.color-btn[data-color="#ff0055"]').style.boxShadow = `0 0 5px #ff0055, inset 0 0 5px #ff0055`;
+
+            // Рисование "спреем"
+            function spray(x, y) {
+                for (let i = 0; i < sprayDensity; i++) {
+                    // Случайный радиус и угол для создания эффекта разброса
+                    const radius = spraySize * Math.random();
+                    const angle = Math.PI * 2 * Math.random();
+
+                    const sprayX = x + radius * Math.cos(angle);
+                    const sprayY = y + radius * Math.sin(angle);
+
+                    // Рисуем точку
+                    ctx.fillStyle = currentColor;
+                    ctx.beginPath();
+                    // Радиус точки зависит от случайного числа для естественности
+                    ctx.arc(sprayX, sprayY, Math.random() * 2 + 0.5, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // Получение координат с учетом масштаба холста
+            function getCoords(e) {
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+
+                let clientX, clientY;
+
+                // Обработка касаний (для мобильных)
+                if (e.touches) {
+                    clientX = e.touches[0].clientX;
+                    clientY = e.touches[0].clientY;
+                } else {
+                    // Обработка кликов (для ПК)
+                    clientX = e.clientX;
+                    clientY = e.clientY;
+                }
+
+                return {
+                    x: (clientX - rect.left) * scaleX,
+                    y: (clientY - rect.top) * scaleY
+                };
+            }
+
+            // Обработчики событий (мышь и тач)
+            const startDrawing = (e) => {
+                e.preventDefault();
+                isDrawing = true;
+                const { x, y } = getCoords(e);
+                spray(x, y);
+            };
+
+            const draw = (e) => {
+                if (!isDrawing) return;
+                e.preventDefault();
+                const { x, y } = getCoords(e);
+                spray(x, y);
+            };
+
+            const stopDrawing = () => {
+                isDrawing = false;
+            };
+
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Обработчики для сенсорных экранов
+            canvas.addEventListener('touchstart', startDrawing);
+            canvas.addEventListener('touchmove', draw);
+            canvas.addEventListener('touchend', stopDrawing);
+
+            // Очистка холста
+            clearButton.addEventListener('click', () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            });
+
+            // Адаптивность холста
+            function resizeCanvas() {
+                const container = canvas.parentElement;
+                const width = container.clientWidth;
+                // Сохраняем соотношение сторон 2:1
+                const height = width / 2;
+
+                // Устанавливаем размер CSS для отображения
+                canvas.style.width = `${width}px`;
+                canvas.style.height = `${height}px`;
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas(); // Инициализация размера при загрузке
+        });
+    </script>
+</body>
+</html>
+
